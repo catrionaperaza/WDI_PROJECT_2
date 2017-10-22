@@ -4,12 +4,12 @@ const { dbUri } = require('../config/environment');
 
 mongoose.connect(dbUri, { useMongoClient: true });
 
-const placesBeen = require('../models/placesBeen');
-const placesToGo = require('../models/placesToGo');
+const PlacesBeen = require('../models/placesBeen');
+// const PlacesToGo = require('../models/placesToGo');
 const User = require('../models/user');
 
-placesBeen.collection.drop();
-placesToGo.collection.drop();
+PlacesBeen.collection.drop();
+// PlacesToGo.collection.drop();
 User.collection.drop();
 
 User
@@ -23,29 +23,19 @@ User
   }])
   .then((users) => {
     console.log(`${users.length} users created`);
-    return Hotel
+    return PlacesBeen
       .create([{
-        name: 'Hotel ibis London City',
-        address: {
-          line1: '5 Commercial Street',
-          city: 'London',
-          postcode: 'E1 6BF',
-          country: 'UK'
-        },
-        image: 'https://www.ahstatic.com/photos/5011_ho_00_p_346x260.jpg',
-        stars: 3
+        placeName: 'Sydney',
+        image: 'https://wallscover.com/images/sydney-2.jpg',
+        whoWith: 'My best friend Laura',
+        whyThoughts: 'I always wanted to visit Sydney and see the Opera House!'
       },{
-        name: 'Premier Inn London City',
-        address: {
-          line1: '66 Alie Street',
-          city: 'London',
-          postcode: 'E1 8PX',
-          country: 'UK'
-        },
-        image: 'http://www.premierinn.com/content/dam/pi/websites/hotelimages/gb/en/L/LONALD/358x620xLondon,P20Aldgate,P2001.jpg.piimage.thumbnail.620.358.jpg.pagespeed.ic.ggMHI3f4MV.jpg',
-        stars: 3
+        placeName: 'New York',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSRuawxXHqDEkrBiwq6yuhApzQC3V6jgDK_-yxP4sryFiajrJ7_w',
+        whoWith: 'My mom',
+        whyThoughts: 'I really wanted to go shopping in New York and to see a musical!'
       }]);
   })
-  .then((hotels) => console.log(`${hotels.length} hotels created`))
+  .then((placesBeen) => console.log(`${placesBeen.length} places been listings created`))
   .catch((err) => console.log(err))
   .finally(() => mongoose.connection.close());

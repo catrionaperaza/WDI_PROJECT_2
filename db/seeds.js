@@ -15,7 +15,9 @@ User
     username: 'odwyercatriona',
     email: 'odwyercatriona@gmail.com',
     password: 'password',
-    passwordConfirmation: 'password'
+    passwordConfirmation: 'password',
+    placesBeen: 'Dublin',
+    placesToGo: 'London'
   }])
   .then((users) => {
     console.log(`${users.length} users created`);
@@ -24,12 +26,14 @@ User
         placeName: 'Sydney',
         image: 'https://wallscover.com/images/sydney-2.jpg',
         whoWith: 'My best friend Laura',
-        whyThoughts: 'I always wanted to visit Sydney and see the Opera House!'
+        whyThoughts: 'I always wanted to visit Sydney and see the Opera House!',
+        status: 'been'
       },{
         placeName: 'New York',
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSRuawxXHqDEkrBiwq6yuhApzQC3V6jgDK_-yxP4sryFiajrJ7_w',
         whoWith: 'My mom',
-        whyThoughts: 'I really wanted to go shopping in New York and to see a musical!'
+        whyThoughts: 'I really wanted to go shopping in New York and to see a musical!',
+        status: 'been'
       }]);
   })
   .then((places) => console.log(`${places.length} places been listings created`))

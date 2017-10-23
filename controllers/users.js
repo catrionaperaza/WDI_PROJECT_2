@@ -1,8 +1,12 @@
 const User = require('../models/user');
 
 function showRoute(req, res) {
-  // req.params.id
-  return res.render('users/show', { user: req.user });
+  User
+    .findById(req.params.id)
+    .exec()
+    .then(user => {
+      return res.render('users/show', { user });
+    });
 }
 
 function editRoute(req, res) {

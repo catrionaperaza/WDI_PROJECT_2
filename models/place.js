@@ -8,4 +8,4 @@ const placesSchema = new mongoose.Schema({
   status: { type: String, trim: true, enum: ['been', 'togo'], default: 'been' }
 });
 
-module.exports = mongoose.model('PlacesBeen', placesSchema);
+module.exports = mongoose.model('Place', placesSchema);

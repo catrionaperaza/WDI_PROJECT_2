@@ -9,23 +9,7 @@ const secureRoute = require('../lib/secureRoute');
 // A home route
 router.get('/', (req, res) => res.render('homepage'));
 
-router.get('/profile', (req, res) => res.render('profile'));
-
-// router.route('/hotels')
-//   .get(hotelsController.index)
-//   .post(secureRoute, hotelsController.create);
-//
-// router.route('/hotels/new')
-//   .get(secureRoute, hotelsController.new);
-//
-// router.route('/hotels/:id')
-//   .get(hotelsController.show)
-//   .put(secureRoute, hotelsController.update)
-//   .delete(secureRoute, hotelsController.delete);
-//
-// router.route('/hotels/:id/edit')
-//   .get(secureRoute, hotelsController.edit);
-//
+// router.get('/profile', (req, res) => res.render('profile')); //do I need this twice?
 
 router.route('/register')
   .get(registrationsController.new)
@@ -39,21 +23,36 @@ router.route('/logout')
   .get(sessionsController.delete);
 
 router.route('/profile')
-  .get(secureRoute, usersController.show) //have edit button on profile
-  .put(secureRoute, usersController.update)
-  .delete(secureRoute, usersController.delete);//have delete button on profile
+  .get(secureRoute, usersController.show) //shows user details (they registered with)
+  .put(secureRoute, usersController.update)//have edit details button on profile
+  .delete(secureRoute, usersController.delete);//have delete details button on profile
 
 router.route('/profile/edit')
-  .get(secureRoute, usersController.edit); //edit the details
+  .get(secureRoute, usersController.edit); //page with edit the details
 
-router.route('/profile/placesBeen')
-  .get(secureRoute, placesController.new);
+router.route('/profile/placesBeen/new') //new ejs page with form
+  .get(secureRoute, placesController.new)
+  .post(secureRoute, placesController.createpB);
+
+router.route('/profile/placesBeen') //this is on main profile (on controller tell it to stay here)
+  .get(secureRoute, placesController.show)
   .put(secureRoute, placesController.update)
-  .delete(secureRoute, usersController.delete);
+  .delete(secureRoute, placesController.delete);
 
-router.route('/profile/placesBeen/edit')
+router.route('/profile/placesBeen/edit') //page with edit the places been details
   .get(secureRoute, placesController.edit);
 
+router.route('/profile/placesToGo/new') //new ejs page with form
+  .get(secureRoute, placesController.new)
+  .post(secureRoute, placesController.createpTG);
+
+router.route('/profile/placesToGo') //this is on main profile (on controller tell it to stay here)
+  .get(secureRoute, placesController.show)
+  .put(secureRoute, placesController.update)
+  .delete(secureRoute, placesController.delete);
+
+router.route('/profile/placesToGo/edit') //page with edit the places been details
+  .get(secureRoute, placesController.edit);
 
 
 router.all('*', (req, res) => res.notFound());

@@ -1,7 +1,21 @@
+<%const User = require('../models/user');%>
+
 <h1>Profile</h1>
 
-<h2>Places I've Been</h2>
+<section class="placesBeen">
+  <h2>Places I Have Been</h2>
+  <ul>
+    <li>
+  <% user.placesBeen.forEach(() => { %>
+    <p><%= placesBeen.content %></p>
+  <% }) %>
+</li>
+</ul>
+</section>
 
-<h2>Places I Want to Go</h2>
-
-//loop through the arrays here 
+<section class="placesToGo">
+  <h2>Places I Want to Go</h2>
+  <% user.placesToGo.forEach(() => { %>
+    <p><%= placesToGo.content %></p>
+  <% }) %>
+</section>

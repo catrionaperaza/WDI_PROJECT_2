@@ -4,12 +4,10 @@ const { dbUri } = require('../config/environment');
 
 mongoose.connect(dbUri, { useMongoClient: true });
 
-const PlacesBeen = require('../models/placesBeen');
-// const PlacesToGo = require('../models/placesToGo');
+const Place = require('../models/place');
 const User = require('../models/user');
 
-PlacesBeen.collection.drop();
-// PlacesToGo.collection.drop();
+Place.collection.drop();
 User.collection.drop();
 
 User
@@ -21,7 +19,7 @@ User
   }])
   .then((users) => {
     console.log(`${users.length} users created`);
-    return PlacesBeen
+    return Place
       .create([{
         placeName: 'Sydney',
         image: 'https://wallscover.com/images/sydney-2.jpg',
@@ -34,6 +32,6 @@ User
         whyThoughts: 'I really wanted to go shopping in New York and to see a musical!'
       }]);
   })
-  .then((placesBeen) => console.log(`${placesBeen.length} places been listings created`))
+  .then((places) => console.log(`${places.length} places been listings created`))
   .catch((err) => console.log(err))
   .finally(() => mongoose.connection.close());

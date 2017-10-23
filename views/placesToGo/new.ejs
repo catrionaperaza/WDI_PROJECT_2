@@ -1,0 +1,24 @@
+<% if (locals.message) { %>
+  <p><%= message %></p>
+<% } %>
+
+<form method="POST" action="/profile">
+  <div>
+    <label for="name">name</label>
+    <input type="text" name="name" id="name">
+  </div>
+  <div>
+    <label for="image">image</label>
+    <input type="image" name="image" id="image">
+  </div>
+  <div>
+    <label for="whoWith">Who With?</label>
+    <input type="whoWith" name="whoWith" id="whoWith">
+  </div>
+  <div>
+    <label for="whyThoughts">Why? Thoughts?</label>
+    <input type="whyThoughts" name="whyThoughts" id="whyThoughts">
+  </div>
+
+  <button class="button">Submit</button>
+</form>

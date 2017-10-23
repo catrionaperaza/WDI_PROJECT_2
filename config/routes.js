@@ -9,6 +9,8 @@ const registrationsController = require('../controllers/registrations');
 // A home route
 router.get('/', (req, res) => res.render('homepage'));
 
+router.get('/profile', (req, res) => res.render('profile'));
+
 // router.route('/hotels')
 //   .get(hotelsController.index)
 //   .post(secureRoute, hotelsController.create);

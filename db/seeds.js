@@ -14,8 +14,6 @@ User.collection.drop();
 
 User
   .create([{
-    firstName: 'Catriona',
-    lastName: 'O\'Dwyer',
     username: 'odwyercatriona',
     email: 'odwyercatriona@gmail.com',
     password: 'password',

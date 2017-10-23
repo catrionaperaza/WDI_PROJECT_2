@@ -4,7 +4,7 @@ const sessionsController = require('../controllers/sessions');
 const registrationsController = require('../controllers/registrations');
 // const placesBeenController = require('../controllers/placesBeen');
 // const placesToGoController = require('../controllers/placesToGo');
-const secureRoute = require('../lib/secureRoute');
+// const secureRoute = require('../lib/secureRoute');
 
 // A home route
 router.get('/', (req, res) => res.render('homepage'));

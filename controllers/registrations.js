@@ -4,13 +4,18 @@ function newRoute(req, res) {
   return res.render('registrations/new');
 }
 
-function createRoute(req, res, next) {
+function createRoute(req, res) {//next may become a problem
+  console.log('im hit');
   User
     .create(req.body)
-    .then((user) => res.redirect('/login'))
+    .then((user) => {
+      res.redirect('/login');
+    })
     .catch((err) => {
-      if(err.name === 'ValidationError') return res.badRequest('/register', err.toString());
-      next(err);
+      if (err.name === 'ValidationError') {
+        return res.status(400).render('registrations/new', { message: 'Passwords do not match' });
+      }
+      res.status(500).end();
     });
 }
 

@@ -2,8 +2,8 @@ const express = require('express');
 const router  = express.Router();
 const sessionsController = require('../controllers/sessions');
 const registrationsController = require('../controllers/registrations');
-const placesBeenController = require('../controllers/placesBeen');
-const placesToGoController = require('../controllers/placesToGo');
+// const placesBeenController = require('../controllers/placesBeen');
+// const placesToGoController = require('../controllers/placesToGo');
 const secureRoute = require('../lib/secureRoute');
 
 // A home route
@@ -29,13 +29,13 @@ router.route('/register')
   .get(registrationsController.new)
   .post(registrationsController.create);
 
-router.route('/profile')
-  .get(secureRoute, registrationsController.show)
-  .put(secureRoute, registrationsController.update)
-  .delete(secureRoute, registrationsController.delete);
-
-router.route('/profile/edit')
-  .get(secureRoute, registrationsController.edit);
+// router.route('/profile')
+//   .get(secureRoute, registrationsController.show)
+//   .put(secureRoute, registrationsController.update)
+//   .delete(secureRoute, registrationsController.delete);
+//
+// router.route('/profile/edit')
+//   .get(secureRoute, registrationsController.edit);
 
 router.route('/login')
   .get(sessionsController.new)

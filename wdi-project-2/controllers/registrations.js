@@ -7,7 +7,7 @@ function newRoute(req, res) {
 function createRoute(req, res, next) {
   User
     .create(req.body)
-    .then(() => res.redirect('/login'))
+    .then((user) => res.redirect('/login'))
     .catch((err) => {
       if(err.name === 'ValidationError') return res.badRequest('/register', err.toString());
       next(err);
@@ -28,7 +28,7 @@ function updateRoute(req, res, next) {
   }
 
   req.user.save()
-    .then(() => res.redirect('/profile'))
+    .then((user) => res.redirect('/profile'))
     .catch((err) => {
       if(err.name === 'ValidationError') return res.badRequest('/profile/edit', err.toString());
       next(err);
@@ -37,7 +37,7 @@ function updateRoute(req, res, next) {
 
 function deleteRoute(req, res, next) {
   return req.user.remove()
-    .then(() => {
+    .then((user) => {
       req.session.regenerate(() => res.redirect('/'));
     })
     .catch(next);

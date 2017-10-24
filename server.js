@@ -10,7 +10,6 @@ const routes = require('./config/routes');
 const customResponses = require('./lib/customResponses');
 const authentication = require('./lib/authentication');
 const errorHandler = require('./lib/errorHandler');
-const User = require('./models/user'); 
 
 const app = express();
 const { port, dbUri, sessionSecret, env } = require('./config/environment');

@@ -1,7 +1,14 @@
-<h1>Travel Dreams Homepage</h1>
+<div class="mx-auto" style="width: 200px;">
+  <h1>TravelDreams</h1>
+</div>
 
+<div class="container">
+  <div class="row">
+    <div class="col">
 <section class="placesBeen">
-  <h2>Places I Have Been</h2>
+  <div class="mx-auto" style="width: 200px;">
+  <h2>Places Been!</h2>
+  </div>
   <ul>
     <% user.places.forEach((place) => { %>
       <% if (place.status === 'Been') { %>
@@ -14,10 +21,17 @@
       <% } %>
     <% }) %>
   </ul>
+  <div class="mx-auto" style="width: 200px;">
   <a href="/profile/<%= user._id %>/places/new" class="button">New</a>
+  </div>
 </section>
+</div>
+
+  <div class="col">
 <section class="placesToGo">
-  <h2>Places To Go</h2>
+  <div class="mx-auto" style="width: 200px;">
+  <h2>Places To Go!</h2>
+  </div>
   <ul>
     <% user.places.forEach((place) => { %>
       <% if (place.status === 'To Go') { %>
@@ -30,5 +44,10 @@
       <% } %>
     <% }) %>
   </ul>
+  <div class="mx-auto" style="width: 200px;">
   <a href="/profile/<%= user._id %>/places/new" class="button">New</a>
+  </div>
 </section>
+</div>
+</div>
+</div>

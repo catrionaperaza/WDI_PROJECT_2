@@ -1,5 +1,4 @@
 const User = require('../models/user');
-const Place = require('../models/place');
 
 function showRoute(req, res) {
   User
@@ -14,7 +13,7 @@ function editRoute(req, res) {
   return res.render('users/edit');
 }
 
-function updateRoute(req, res, next) { //need to fix this one
+function updateRoute(req, res, next) { 
   User
     .findById(req.params.id)
     .exec()

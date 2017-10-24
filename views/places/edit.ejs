@@ -20,7 +20,13 @@
   </div>
   <div>
     <label for="status">Been or To Go?</label>
-    <input type="text" name="status" value="<%= place.status %>">
+    <% if (place.status === "Been") { %>
+      <input type="radio" name="status" value="Been" checked>Been
+      <input type="radio" name="status" value="To Go">To Go
+    <% } else { %>
+      <input type="radio" name="status" value="Been">Been
+      <input type="radio" name="status" value="To Go" checked>To Go
+    <% } %>
   </div>
 
   <button class="button">EDIT!</button>

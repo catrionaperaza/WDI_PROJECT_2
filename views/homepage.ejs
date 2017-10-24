@@ -1,50 +1,56 @@
-<div class="mx-auto" style="width: 200px;">
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col 8 col-sm 6">
   <h1>TravelDreams</h1>
+</div>
+</div>
 </div>
 
 <div class="container">
-  <div class="row">
-    <div class="col">
+  <div class="row justify-content-center">
+    <div class="col 8 col-sm 6">
 <section class="placesBeen">
   <div class="mx-auto" style="width: 200px;">
   <h2>Places Been!</h2>
   </div>
   <ul>
+    <div class="mx-auto" style="width: 200px;">
     <% user.places.forEach((place) => { %>
       <% if (place.status === 'Been') { %>
         <li>
           <a href="profile/<%=user._id %>/places/<%= place._id %>">
             <p><%= place.name %></p>
-            <p><%= place.status %></p>
           </a>
         </li>
       <% } %>
     <% }) %>
+  </div>
   </ul>
-  <div class="mx-auto" style="width: 200px;">
+  <div class="mx-auto" style="width: 100px;">
   <a href="/profile/<%= user._id %>/places/new" class="button">New</a>
   </div>
 </section>
 </div>
 
-  <div class="col">
+  <div class="col 8 col-sm 6">
 <section class="placesToGo">
   <div class="mx-auto" style="width: 200px;">
   <h2>Places To Go!</h2>
   </div>
   <ul>
+    <div class="mx-auto" style="width: 200px;">
     <% user.places.forEach((place) => { %>
       <% if (place.status === 'To Go') { %>
         <li>
           <a href="profile/<%=user._id %>/places/<%= place._id %>">
             <p><%= place.name %></p>
-            <p><%= place.status %></p>
           </a>
         </li>
       <% } %>
     <% }) %>
+  </div>
   </ul>
-  <div class="mx-auto" style="width: 200px;">
+  <div class="mx-auto" style="width: 100px;">
   <a href="/profile/<%= user._id %>/places/new" class="button">New</a>
   </div>
 </section>

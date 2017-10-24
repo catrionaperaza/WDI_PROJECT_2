@@ -1,5 +1,7 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col 4 col-sm 8">
 <form method="POST" action="/profile/<%= user._id %>/places/new">
-
   <div>
     <label for="name">name</label>
     <input type="text" name="name" id="name">
@@ -18,8 +20,12 @@
   </div>
   <div>
     <label for="status">Been or To Go?</label>
-    <input type="text" name="status">
+    <input type="radio" name="status" value="Been">Been
+    <input type="radio" name="status" value="To Go">To Go
   </div>
 
   <button class="button">Submit</button>
 </form>
+</div>
+</div>
+</div>

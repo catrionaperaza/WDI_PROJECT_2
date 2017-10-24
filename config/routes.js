@@ -24,25 +24,24 @@ router.route('/logout')
 
 router.route('/profile/:id')
   .get(secureRoute, usersController.show) //shows user details (they registered with)
-  .put(secureRoute, usersController.update)//have edit details button on profile
-  .delete(secureRoute, usersController.delete);//have delete details button on profile
+  .put(secureRoute, usersController.update); //have edit details button on profile
 
 router.route('/profile/:id/edit')
   .get(secureRoute, usersController.edit); //page with edit the details
 
-router.route('/profile/:id/placesBeen/new') //new ejs page with form
-  .get(secureRoute, placesController.newpB)
-  .post(secureRoute, placesController.createpB);
+router.route('/profile/:id/places/new') //new ejs page with form
+  .get(secureRoute, placesController.new)
+  .post(secureRoute, placesController.create);
 
-router.route('/profile/:id/placesBeen/:placesBeenId')
-  .get(secureRoute, placesController.showpB)
-  .put(secureRoute, placesController.updatepB);
+router.route('/profile/:id/places/:placesId')
+  .get(secureRoute, placesController.show)
+  .put(secureRoute, placesController.update);
 
-router.route('/profile/:id/placesBeen/:placesBeenId/edit')
-  .get(secureRoute, placesController.editpB);
+router.route('/profile/:id/places/:placesId/edit')
+  .get(secureRoute, placesController.edit);
 
 router.route('/places/:id')
-  .delete(secureRoute, placesController.deletepB);
+  .delete(secureRoute, placesController.delete);
 
 router.all('*', (req, res) => res.notFound());
 

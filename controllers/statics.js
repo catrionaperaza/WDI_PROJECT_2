@@ -7,7 +7,7 @@ function staticsIndex(req, res) {
   } else {
     User
       .findById(req.session.userId)
-      .populate('placesBeen')
+      .populate('places')
       .exec()
       .then(user => {
         res.render('homepage', { user });

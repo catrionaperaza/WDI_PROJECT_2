@@ -1,3 +1,8 @@
-<section>
-  <%= user %>
-</section>
+<h1>My details</h1>
+
+<h2>Email Address: <%= user.email %></h2>
+<h2>Username: <%= user.username %></h2>
+<p>Image: <img src="<%= user.image %>"></p>
+
+
+<a href="/profile/<%= locals.user.id %>/edit">EDIT</a>

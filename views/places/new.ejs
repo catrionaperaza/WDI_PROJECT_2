@@ -1,4 +1,5 @@
-<form method="POST" action="/profile/<%= locals.user.id %>/placesToGo/new">
+<form method="POST" action="/profile/<%= user._id %>/places/new">
+
   <div>
     <label for="name">name</label>
     <input type="text" name="name" id="name">
@@ -14,6 +15,10 @@
   <div>
     <label for="whyThoughts">Why? Thoughts?</label>
     <input type="whyThoughts" name="whyThoughts" id="whyThoughts">
+  </div>
+  <div>
+    <label for="status">Been or To Go?</label>
+    <input type="text" name="status">
   </div>
 
   <button class="button">Submit</button>

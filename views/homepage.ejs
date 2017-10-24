@@ -3,10 +3,10 @@
 <section class="placesBeen">
   <h2>Places I Have Been</h2>
   <ul>
-    <% user.placesBeen.forEach((place) => { %>
-      <% if (place.status === 'been') { %>
+    <% user.places.forEach((place) => { %>
+      <% if (place.status === 'Been') { %>
         <li>
-          <a href="profile/<%=user._id %>/placesBeen/<%= place._id %>">
+          <a href="profile/<%=user._id %>/places/<%= place._id %>">
             <p><%= place.name %></p>
             <p><%= place.status %></p>
           </a>
@@ -14,15 +14,15 @@
       <% } %>
     <% }) %>
   </ul>
-  <a href="/profile/<%= user._id %>/placesBeen/new" class="button">New</a>
+  <a href="/profile/<%= user._id %>/places/new" class="button">New</a>
 </section>
 <section class="placesToGo">
   <h2>Places To Go</h2>
   <ul>
-    <% user.placesBeen.forEach((place) => { %>
-      <% if (place.status === 'togo') { %>
+    <% user.places.forEach((place) => { %>
+      <% if (place.status === 'To Go') { %>
         <li>
-          <a href="profile/<%=user._id %>/placesBeen/<%= place._id %>">
+          <a href="profile/<%=user._id %>/places/<%= place._id %>">
             <p><%= place.name %></p>
             <p><%= place.status %></p>
           </a>
@@ -30,5 +30,5 @@
       <% } %>
     <% }) %>
   </ul>
-  <a href="/profile/<%= user._id %>/placesBeen/new" class="button">New</a>
+  <a href="/profile/<%= user._id %>/places/new" class="button">New</a>
 </section>

@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema({
   username: { type: String, required: true, trim: true, unique: true },
   password: { type: String, required: true },
   image: String,
-  placesBeen: [{ type: mongoose.Schema.ObjectId, ref: 'Place', required: true }] //we push the places been here from the places controller
+  places: [{ type: mongoose.Schema.ObjectId, ref: 'Place', required: true }] //we push the places been here from the places controller
 });
 
 userSchema

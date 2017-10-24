@@ -30,6 +30,6 @@ function sessionsDelete(req, res) {
 
 module.exports = {
   new: sessionsNew,
-  create: sessionsCreate,
+  create: sessionsCreate, 
   delete: sessionsDelete
 };

@@ -1,71 +1,94 @@
 const Place = require('../models/place');
 const User = require('../models/user');
 
-function placesBeenNew(req, res) {
-  return res.render('placesBeen/new');
+function placesNew(req, res) {
+  return res.render('places/new');
 }
 
-function placesBeenCreate(req, res, next) {
-  req.body.status = 'been';
+// function placesCreate(req, res, next) {
+//   req.body.status = 'Been';
+//
+//   Place
+//     .create(req.body)
+//     .then((place) => {
+//       User
+//         .findById(req.params.id)
+//         .exec()
+//         .then(user => {
+//           user.places.push(place.id);
+//           return user.save();
+//         });
+//     })
+//     .then(() => {
+//       res.redirect('/');
+//     })
+//     .catch(next);
+// }
 
+function placesCreate(req, res) {
   Place
     .create(req.body)
-    .then((place) => {
+    .then(place => {
       User
         .findById(req.params.id)
         .exec()
         .then(user => {
-          user.placesBeen.push(place.id);
+          user.places.push(place.id);
           return user.save();
-        });
-    })
-    .then(() => {
-      res.redirect('/');
-    })
-    .catch(next);
-}
-
-function placesBeenShow(req, res) {
-  Place
-    .findById(req.params.placesBeenId)
-    .exec()
-    .then(place => {
-      console.log(place);
-      res.render('placesBeen/show', {place});
-    });
-}
-
-function placesBeenEdit(req,res) {
-  Place
-    .findById(req.params.placesBeenId)
-    .exec()
-    .then(place => {
-      res.render('placesBeen/edit', {place});
-    });
-}
-
-function placesBeenUpdate(req, res) {
-  Place
-    .findById(req.params.placesBeenId)
-    .exec()
-    .then(place => {
-      User
-        .findById(req.params.id)
-        .exec()
+        })
         .then(user => {
-          console.log(user.placesBeen);
           for(const field in req.body) {
             place[field] = req.body[field];
           }
           return place.save();
         })
         .then(place => {
-          res.redirect(`/profile/${req.session.userId}/placesBeen/${place._id}`);
+          res.redirect(`/profile/${req.session.userId}/places/${place._id}`);
         });
     });
 }
 
-function placesBeenDelete(req, res) {
+function placesShow(req, res) {
+  Place
+    .findById(req.params.placesId)
+    .exec()
+    .then(place => {
+      console.log(place);
+      res.render('places/show', {place});
+    });
+}
+
+function placesEdit(req,res) {
+  Place
+    .findById(req.params.placesId)
+    .exec()
+    .then(place => {
+      res.render('places/edit', {place});
+    });
+}
+
+function placesUpdate(req, res) {
+  Place
+    .findById(req.params.placesId)
+    .exec()
+    .then(place => {
+      User
+        .findById(req.params.id)
+        .exec()
+        .then(user => {
+          console.log(user.places);
+          for(const field in req.body) {
+            place[field] = req.body[field];
+          }
+          return place.save();
+        })
+        .then(place => {
+          res.redirect(`/profile/${req.session.userId}/places/${place._id}`);
+        });
+    });
+}
+
+function placesDelete(req, res) {
   console.log('Im hit');
   Place
     .findById(req.params.id)
@@ -78,10 +101,10 @@ function placesBeenDelete(req, res) {
 }
 
 module.exports = {
-  newpB: placesBeenNew,
-  createpB: placesBeenCreate,
-  showpB: placesBeenShow,
-  editpB: placesBeenEdit,
-  updatepB: placesBeenUpdate,
-  deletepB: placesBeenDelete
+  new: placesNew,
+  create: placesCreate,
+  show: placesShow,
+  edit: placesEdit,
+  update: placesUpdate,
+  delete: placesDelete
 };

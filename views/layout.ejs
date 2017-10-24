@@ -8,8 +8,6 @@
   <body>
   <% if(locals.isAuthenticated) { %>
     <% include ./partials/_navbar %>
-    <% } else { %>
-      <li><a href="/register">Register</a></li>
     <% } %>
     <% for(const type in messages) { %>
       <div class="callout <%= type %>">

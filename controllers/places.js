@@ -5,26 +5,6 @@ function placesNew(req, res) {
   return res.render('places/new');
 }
 
-// function placesCreate(req, res, next) {
-//   req.body.status = 'Been';
-//
-//   Place
-//     .create(req.body)
-//     .then((place) => {
-//       User
-//         .findById(req.params.id)
-//         .exec()
-//         .then(user => {
-//           user.places.push(place.id);
-//           return user.save();
-//         });
-//     })
-//     .then(() => {
-//       res.redirect('/');
-//     })
-//     .catch(next);
-// }
-
 function placesCreate(req, res) {
   Place
     .create(req.body)
@@ -76,7 +56,6 @@ function placesUpdate(req, res) {
         .findById(req.params.id)
         .exec()
         .then(user => {
-          console.log(user.places);
           for(const field in req.body) {
             place[field] = req.body[field];
           }

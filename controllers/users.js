@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const Place = require('../models/place');
 
 function showRoute(req, res) {
   User
@@ -18,19 +19,22 @@ function updateRoute(req, res, next) { //need to fix this one
     .findById(req.params.id)
     .exec()
     .then(user => {
-      for(const field in req.body) {
-        req.user[field] = req.body[field];
-      }
+      if (!user) return res.notFound();
 
-      req.user.save()
-        .then((user) => res.redirect('/'))
-        .catch((err) => {
-          if(err.name === 'ValidationError') return res.badRequest('/profile/:id/edit', err.toString());
-          next(err);
-        });
+      for(const field in req.body) {
+        user[field] = req.body[field];
+      }
+      console.log(user);
+      return user.save();
+    })
+    .then(user => {
+      res.redirect('/');
+    })
+    .catch((err) => {
+      if(err.name === 'ValidationError') return res.badRequest('/profile/:id/edit', err.toString());
+      next(err);
     });
 }
-
 
 module.exports = {
   show: showRoute,

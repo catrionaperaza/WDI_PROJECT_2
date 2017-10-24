@@ -12,28 +12,26 @@ User.collection.drop();
 
 User
   .create([{
-    username: 'odwyercatriona',
     email: 'odwyercatriona@gmail.com',
+    username: 'odwyercatriona',
     password: 'password',
-    passwordConfirmation: 'password',
-    placesBeen: 'Dublin',
-    placesToGo: 'London'
+    image: 'https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAKDAAAAJDliNmVlNDk1LTg1YmYtNDlkNi04OTBlLThkNmI3Yjk0ZGFlMQ.jpg'
   }])
   .then((users) => {
     console.log(`${users.length} users created`);
     return Place
       .create([{
-        placeName: 'Sydney',
+        name: 'Sydney',
         image: 'https://wallscover.com/images/sydney-2.jpg',
         whoWith: 'My best friend Laura',
         whyThoughts: 'I always wanted to visit Sydney and see the Opera House!',
-        status: 'been'
+        status: 'Been'
       },{
-        placeName: 'New York',
+        name: 'New York',
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSRuawxXHqDEkrBiwq6yuhApzQC3V6jgDK_-yxP4sryFiajrJ7_w',
         whoWith: 'My mom',
         whyThoughts: 'I really wanted to go shopping in New York and to see a musical!',
-        status: 'been'
+        status: 'Been'
       }]);
   })
   .then((places) => console.log(`${places.length} places been listings created`))

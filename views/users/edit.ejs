@@ -1,4 +1,4 @@
-<form method="POST" action="/profile/<%= locals.user.id %>/edit">
+<form method="POST" action="/profile/<%= user._id %>">
   <input type="hidden" name="_method" value="PUT">
   <div>
     <label for="username">Username</label>
@@ -7,6 +7,10 @@
   <div>
     <label for="email">Email</label>
     <input type="email" name="email" id="email" required value="<%= user.email %>">
+  </div>
+  <div>
+    <label for="image">image</label>
+    <input type="text" name="image" id="image">
   </div>
   <div>
     <label for="password">Password</label>

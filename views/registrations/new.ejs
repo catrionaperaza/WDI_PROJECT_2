@@ -2,6 +2,11 @@
   <p><%= message %></p>
 <% } %>
 
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col 4 col-sm 8">
+      <h1>Register</h1>
+
 <form method="POST" action="/register">
   <div>
     <label for="username">Username</label>
@@ -24,7 +29,11 @@
     <input type="password" name="passwordConfirmation" id="passwordConfirmation">
   </div>
 
-  <button class="button">Register</button>
+  <button class="button btn-lg btn-primary">Register</button>
+
 </form>
 
-<p>Already a user? <a href="/login">Login here</a></p>
+<p>Already a user? <a href="/login" class="btn btn-sm btn-success">Login here</a></p>
+</div>
+</div>
+</div>

@@ -1,4 +1,7 @@
-<h1>Edit</h1>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col 4 col-sm 8">
+      <h1>Edit</h1>
 
 <form method="POST" action="/profile/<%= locals.user.id %>/places/<%= place._id %>">
   <input type="hidden" name="_method" value="PUT">
@@ -29,5 +32,8 @@
     <% } %>
   </div>
 
-  <button class="button">EDIT!</button>
+  <button class="button btn-lg btn-primary">EDIT!</button>
 </form>
+</div>
+</div>
+</div>

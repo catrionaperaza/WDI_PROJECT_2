@@ -41,20 +41,9 @@ router.route('/profile/:id/placesBeen/:placesBeenId')
 router.route('/profile/:id/placesBeen/:placesBeenId/edit')
   .get(secureRoute, placesController.editpB);
 
-router.route('/profile/:id/placesToGo/new') //new ejs page with form
-  .get(secureRoute, placesController.newpTG)
-  .post(secureRoute, placesController.createpTG);
-
-router.route('/profile/:id/placesToGo/:placesToGoId')
-  .get(secureRoute, placesController.showpTG)
-  .put(secureRoute, placesController.updatepTG);
-
-router.route('/profile/:id/placesToGo/:placesToGoId/edit')
-  .get(secureRoute, placesController.editpTG);
-
-
+router.route('/places/:id')
+  .delete(secureRoute, placesController.deletepB);
 
 router.all('*', (req, res) => res.notFound());
-
 
 module.exports = router;

@@ -6,8 +6,7 @@ const userSchema = new mongoose.Schema({
   username: { type: String, required: true, trim: true, unique: true },
   password: { type: String, required: true },
   image: String,
-  placesBeen: [{ }], //we push the places been here from the places controller
-  placesToGo: [{ }] //we then loop through these places on the profile page
+  placesBeen: [{ type: mongoose.Schema.ObjectId, ref: 'Place', required: true }] //we push the places been here from the places controller
 });
 
 userSchema

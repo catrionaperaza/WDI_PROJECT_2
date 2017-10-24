@@ -5,8 +5,9 @@ const userSchema = new mongoose.Schema({
   email: { type: String, required: true, trim: true, unique: true },
   username: { type: String, required: true, trim: true, unique: true },
   password: { type: String, required: true },
+  image: String,
   placesBeen: [{ }], //we push the places been here from the places controller
-  placesToGo: [{ }] //we then loop through these places on the profile page 
+  placesToGo: [{ }] //we then loop through these places on the profile page
 });
 
 userSchema

@@ -1,0 +1,27 @@
+<h1>Edit</h1>
+
+<form method="POST" action="/profile/<%= locals.user.id %>/placesToGo/<%= place._id %>">
+  <input type="hidden" name="_method" value="PUT">
+  <div>
+    <label for="name">name</label>
+    <input type="text" name="name" id="name" value="<%= place.name %>">
+  </div>
+  <div>
+    <label for="image">image</label>
+    <input type="text" name="image" id="image" value="<%= place.image %>">
+  </div>
+  <div>
+    <label for="whoWith">Who With?</label>
+    <input type="whoWith" name="whoWith" id="whoWith" value="<%= place.whoWith %>">
+  </div>
+  <div>
+    <label for="whyThoughts">Why? Thoughts?</label>
+    <input type="whyThoughts" name="whyThoughts" id="whyThoughts" value="<%= place.whyThoughts %>">
+  </div>
+  <div>
+    <label for="status">Been or To Go?</label>
+    <input type="text" name="status" value="<%= place.status %>">
+  </div>
+
+  <button class="button">EDIT!</button>
+</form>

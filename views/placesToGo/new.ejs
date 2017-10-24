@@ -1,11 +1,11 @@
-<form method="POST" action="/profile/placesToGo/new">
+<form method="POST" action="/profile/<%= locals.user.id %>/placesToGo/new">
   <div>
     <label for="name">name</label>
     <input type="text" name="name" id="name">
   </div>
   <div>
     <label for="image">image</label>
-    <input type="image" name="image" id="image">
+    <input type="text" name="image" id="image">
   </div>
   <div>
     <label for="whoWith">Who With?</label>

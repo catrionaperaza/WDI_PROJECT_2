@@ -1,5 +1,6 @@
 const User = require('../models/user');
 
+
 function newRoute(req, res) {
   return res.render('registrations/new');
 }
@@ -8,7 +9,9 @@ function createRoute(req, res) {//next may become a problem
   User
     .create(req.body)
     .then((user) => {
-      res.redirect('/login');
+      req.session.userId = user._id;
+      req.session.isAuthenticated = true;
+      res.redirect('/');
     })
     .catch((err) => {
       if (err.name === 'ValidationError') {

@@ -1,1 +1,27 @@
 <h1>Travel Dreams Homepage</h1>
+<%= user %>
+<section class="placesBeen">
+  <h2>Places I Have Been</h2>
+  <ul>
+    <% user.placesBeen.forEach((place) => { %>
+      <li>
+        <a href="profile/<%=user._id %>/placesBeen/<%= place._id %>">
+          <p><%= place.name %></p>
+          <p><%= place.status %></p>
+        </a>
+      </li>
+    <% }) %>
+  </ul>
+  <a href="/profile/<%= user._id %>/placesBeen/new" class="button">New</a>
+</section>
+<section class="placesToGo">
+  <h2>Places I Want to Go</h2>
+  <ul>
+    <% user.placesToGo.forEach((place) => { %>
+      <li>
+        <p><%= place.name %></p>
+      </li>
+    <% }) %>
+  </ul>
+  <a href="/profile/<%= user._id %>/placesToGo/new" class="button">New</a>
+</section>

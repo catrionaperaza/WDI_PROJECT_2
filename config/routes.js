@@ -35,13 +35,12 @@ router.route('/profile/:id/places/new') //new ejs page with form
 
 router.route('/profile/:id/places/:placesId')
   .get(secureRoute, placesController.show)
-  .put(secureRoute, placesController.update);
+  .put(secureRoute, placesController.update)
+  .delete(secureRoute, placesController.delete);
 
 router.route('/profile/:id/places/:placesId/edit')
   .get(secureRoute, placesController.edit);
 
-router.route('/places/:id')
-  .delete(secureRoute, placesController.delete);
 
 router.all('*', (req, res) => res.notFound());
 

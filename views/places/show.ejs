@@ -1,9 +1,10 @@
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col 4 col-sm 8">
-<div class="mx-auto" style="width: 200px;">
-<h1><%= place.name %></h1>
-</div>
+  <div class="row">
+    <div class="col">
+<h1>Where? <span><%= place.name %></span></h1>
+<h1><img src="<%= place.image %>"</h1>
+<h1>Who would you like to go with?  <span><%= place.whoWith %></span></h1>
+<h1>Why? Thoughts!  <span><%= place.whyThoughts %></span></h1>
 </div>
 </div>
 </div>
@@ -11,8 +12,8 @@
   <a href="/profile/<%= locals.user.id %>/places/<%= place._id %>/edit" class="btn btn-lg btn-primary">Edit</a>
 </div>
   <div class="mx-auto" style="width: 100px;">
-<form method="POST" action="/places/<%= place._id %>">
+<form action="/profile/<%= locals.user.id %>/places/<%= place._id %>" method="POST">
   <input type="hidden" name="_method" value="DELETE">
-  <p class="btn btn-lg btn-danger">Delete</p>
+  <button type="button" name="button">Delete</button>
 </form>
 </div>

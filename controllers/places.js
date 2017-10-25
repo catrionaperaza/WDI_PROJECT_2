@@ -68,15 +68,23 @@ function placesUpdate(req, res) {
 }
 
 function placesDelete(req, res) {
-  console.log('Im hit');
-  Place
+  User
     .findById(req.params.id)
     .exec()
-    .then(place => {
-      if (!place) return res.notFound();
-      return place.remove();
+    .then(user => {
+      console.log(user);
+      Place
+        .findById(req.params.placesId)
+        .exec()
+        .then(place => {
+          console.log('Im hit');
+          console.log(place);
+          if (!place) return res.notFound();
+          return place.remove();
+        });
+
     })
-    .then(() => res.redirect('/'));
+    .then(() => res.redirect('/homepage'));
 }
 
 module.exports = {

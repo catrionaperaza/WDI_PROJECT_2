@@ -1,24 +1,16 @@
-<div class="mx-auto" style="width: 200px;">
-  <h1>My details</h1>
-</div>
-
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <div class="mx-auto" style="width: 200px;">
-<h3><%= user.email %></h3>
-</div>
-<div class="mx-auto" style="width: 200px;">
-<h3><%= user.username %></h3>
-</div>
-<div class="mx-auto" style="width: 200px;">
-<a href="/profile/<%= locals.user.id %>/edit" class="btn btn-lg btn-primary">EDIT</a>
-</div>
-</div>
-
+<div class="container">
+<div class='row'>
 <div class="col">
-  <div class="mx-auto" style="width: 200px;">
-    <img src="<%= user.image %>" alt="..." class="rounded-circle">
+<div class="mx-auto" style="width: 200px;">
+<h1>My details</h1>
+
+<img src="<%= user.image %>" alt="..." class="rounded-circle">
+<h3>Email: <%= user.email %></h3>
+
+<h3>Username: <%= user.username %></h3>
+
+<a href="/profile/<%= locals.user.id %>/edit" class="btn btn-lg btn-primary">Edit!</a>
+</div>
 </div>
 </div>
 </div>

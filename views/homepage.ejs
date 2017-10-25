@@ -11,10 +11,10 @@
     <div class="col 8 col-sm 6">
 <section class="placesBeen">
   <div class="mx-auto" style="width: 200px;">
-  <h2>Places Been!</h2>
+  <h2>Places I've Been!</h2>
   </div>
   <ul>
-    <div class="mx-auto" style="width: 180px;">
+    <div class="mx-auto" style="width: 100px;">
     <% user.places.forEach((place) => { %>
       <% if (place.status === 'Been') { %>
         <li>
@@ -27,7 +27,7 @@
   </div>
   </ul>
   <div class="mx-auto" style="width: 100px;">
-  <a href="/profile/<%= user._id %>/places/new" class="button btn-lg btn-primary">New</a>
+  <a href="/profile/<%= user._id %>/places/new" class="button btn-lg btn-primary">New!</a>
   </div>
 </section>
 </div>
@@ -35,10 +35,10 @@
   <div class="col 8 col-sm 6">
 <section class="placesToGo">
   <div class="mx-auto" style="width: 200px;">
-  <h2>Places To Go!</h2>
+  <h2>Places I Want To Go!</h2>
   </div>
   <ul>
-    <div class="mx-auto" style="width: 180px;">
+    <div class="mx-auto" style="width: 100px;">
     <% user.places.forEach((place) => { %>
       <% if (place.status === 'To Go') { %>
         <li>
@@ -51,7 +51,7 @@
   </div>
   </ul>
   <div class="mx-auto" style="width: 100px;">
-  <a href="/profile/<%= user._id %>/places/new" class="button btn-lg btn-primary">New</a>
+  <a href="/profile/<%= user._id %>/places/new" class="button btn-lg btn-primary">New!</a>
   </div>
 </section>
 </div>

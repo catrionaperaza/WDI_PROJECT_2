@@ -84,7 +84,7 @@ function placesDelete(req, res) {
         });
 
     })
-    .then(() => res.redirect('/homepage'));
+    .then(() => res.redirect('/'));
 }
 
 module.exports = {

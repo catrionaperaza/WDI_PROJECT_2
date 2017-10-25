@@ -1,18 +1,55 @@
 body {
-  font-family: 'Roboto', sans-serif;
+  background-color: #ECCAD2;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 h1 {
-  color: pink;
+  color: royalBlue;
   text-align: center;
-  font-size: 40px;
+  font-size: 35px;
+  margin: 40px;
 }
 
 h2 {
-  color: blue;
+  color: white;
+  text-align: center;
+  font-style: bold;
+  font-size: 30px;
+  font-style: italic;
+}
+
+h3 {
+  color: royalBlue;
+  text-align: center;
+  font-size: 20px;
 }
 
 span {
-  color: blue;
+  color: 	white;
   font-style: italic;
+  text-align: center;
+}
+
+.placesBeen {
+  text-align: center;
+  font-style: bold;
+  font-size: 20px;
+  font-style: italic;
+}
+
+.placesToGo{
+  text-align: center;
+  font-style: bold;
+  font-size: 20px;
+  font-style: italic;
+}
+
+.placeImage {
+  height:300px;
+  width:300px;
+  position: relative;
+  top: 10%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
 }

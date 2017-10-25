@@ -1,6 +1,6 @@
 body {
   background-color: #ECCAD2;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Rochester', sans-serif;
 }
 
 h1 {
@@ -34,21 +34,26 @@ span {
 }
 
 .placesBeen {
+  margin-left: 100px;
   text-align: center;
   font-style: bold;
-  font-size: 20px;
+  font-size: 30px;
   font-style: italic;
+  font-family: 'Rochester', cursive;
 }
 
 .placesToGo {
+  margin-right: -100px;
   text-align: center;
   font-style: bold;
-  font-size: 20px;
+  font-size: 30px;
   font-style: italic;
+  font-family: 'Rochester', cursive;
 }
 
 ul {
   list-style-type: none;
+  font-size: 30px;
 }
 
 a {
@@ -73,6 +78,7 @@ a {
   width:300px;
   position: relative;
   padding: 20px;
+  margin-top: 60px;
   top: 10%;
   left: 50%;
   margin-right: -50%;

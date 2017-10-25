@@ -1,20 +1,22 @@
 
-<div class="mx-auto" style="width: 200px;">
+<div class="mx-auto" style="width: 500px;">
 <h1>My details</h1>
 
 <div class="container">
 <div class='row'>
 <div class="col">
 
-<img src="<%= user.image %>" alt="..." class="userImage rounded-circle">
+<img src="<%= user.image %>" alt="..." class="userImage img-thumbnail rounded img-fluid">
 </div>
 
-<div class="mx-auto" style="width: 200px;">
+<div class="mx-auto" style="width: 500px;">
 
 <h3>Email: <%= user.email %></h3>
 
 <h3>Username: <%= user.username %></h3>
+</div>
 
+<div class="mx-auto" style="width: 140px;">
 <a href="/profile/<%= locals.user.id %>/edit" class="btn btn-lg btn-primary">Edit!</a>
 </div>
 </div>

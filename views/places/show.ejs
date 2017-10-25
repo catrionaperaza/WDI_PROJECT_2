@@ -6,11 +6,11 @@
 <h1>Why? Thoughts!  <span><%= place.whyThoughts %></span></h1>
 </div>
 </div>
-<h1 class="placeImage"><img src="<%= place.image %>"</h1>
-<div class="mx-auto" style="width: 100px;">
+<h1 class="placeImage"><img class ="rounded-circle" src="<%= place.image %>"</h1>
+<div class="mx-auto" style="width: 200px;">
 <a href="/profile/<%= locals.user.id %>/places/<%= place._id %>/edit" class="btn btn-lg btn-primary">Edit!</a>
-</div>
-<div class="mx-auto" style="width: 100px;">
+
+
 <form action="/profile/<%= locals.user.id %>/places/<%= place._id %>" method="POST">
 <input type="hidden" name="_method" value="DELETE">
 <button name="button" class="btn btn-lg btn-primary">Delete!</button>

@@ -1,3 +1,13 @@
-# WDI_PROJECT_2
+The brief for this project was to create a full RESTful full stack app, with authentication. This was an individual project.
 
-#Pulling and pushing
+The idea for my app was to create an online platform for users to add their travel plans, to note the countries and cities they had visited, and to form plans for the places they wanted to go to in the future. Each user would have their own profile, and their personal details displayed on this, with a homepage that showed their travel dreams, as the app was called. They could add photos of the places they had been or wanted to visit, alongside who they would go with. I visualised that further down the line, I could add the technology to allow users to tag each other in these posts, so they could share travel plans with each other and view each others pages if they were friends, for example.
+
+This was the first time I created a full stack app, and it was greatly enjoyable. My main learning points were around the proper planning for the project. I found that wireframing was crucial before any coding was begun, to ensure I was following a clear plan and that the user experience was as smooth as possible. I also found that it was really important to take small steps in setting up the app, and to test after each step, otherwise if I did too much at once it was very difficult to identify any errors.  
+
+In terms of technical learning, I found that I could give the option on the form for creating or editing a new travel dream post, to select whether the post was categorised as places been, or places to go. I displayed this as an audio button, and added a conditional statement to display the content in either the places been or places to go part of the page, depending on which answer was logged. I also found that I could use two models, one for the user and one for the place, and controllers for these, and for registrations and sessions, to separately manage the places and the users, and to have the profile for the user (along with RESTful routes for this, such as edit, delete, create etc), and the homepage for the places, with other RESTful routes for this. I also learned to use partials to keep a lot of the content on the one page, on the homepage, to improve the user experience. I additionally learned to add authentication, and to display the option to login or logout depending on the current status of the user.
+
+This was a highly enjoyable project and a real achievement to create my first full stack app! I was also delighted to receive positive feedback from my classmates and instructors when I presented the app to them, where they showed interest in using the website in real life, which was fantastic to hear.
+
+![screenshot 2017-11-27 00 08 49](https://user-images.githubusercontent.com/31046466/33245993-613abe78-d307-11e7-90c4-cdd982ef7650.png)
+![screenshot 2017-11-27 00 09 17](https://user-images.githubusercontent.com/31046466/33245995-628c72d0-d307-11e7-8d1d-9700ef162890.png)
+![screenshot 2017-11-27 00 09 39](https://user-images.githubusercontent.com/31046466/33245996-63fcc318-d307-11e7-8796-d2950e5d45d8.png)
